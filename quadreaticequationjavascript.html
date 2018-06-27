@@ -4,32 +4,40 @@
   <title>Calculate Quadratic Equations root.</title>
   <meta charset="utf-8"/>
   <script>
- function myEquation()
+ function myQuadraticEquation()
  {
- var a=document.getElementById('1stNumber').value;
- var b=document.getElementById('2ndNumber').value;
- var c=document.getElementById('3rdNumber').value;
+ var a=document.getElementById('valueA').value;
+ var b=document.getElementById('valueB').value;
+ var c=document.getElementById('valueC').value;
+ document.getElementById('a').innerHTML=a;
+ document.getElementById('b').innerHTML=b;
+ document.getElementById('c').innerHTML=c;
+ console.log(a,b,c);
  var d=(b*b)-(4*a*c);
  var deno=2*a;
  var sqrd=Math.sqrt(d);
  if (sqrd==0)
  {
- document.getElementById('Equation').innerHTML= "<p> Their is real and equal root. </p>";
+ document.getElementById('Equation').innerHTML = "<p> There is real and equal root. </p>";
 var x1=(-b+sqrd)/deno;
 var x2=(-b-sqrd)/deno;
 document.getElementById('x1').innerHTML='x1 ='+x1;
 document.getElementById('x2').innerHTML='x2 ='+x2;
-
-
  }
- else
+ else if (sqrd>0)
  {
- document.getElementById('Equation').innerHTML=  "<p> Their is no real root. </p>";
+  document.getElementById('Equation').innerHTML = "<p> There is real and distinct root. </p>";
+var x1=(-b+sqrd)/deno;
+var x2=(-b-sqrd)/deno;
+document.getElementById('x1').innerHTML='x1 ='+x1;
+document.getElementById('x2').innerHTML='x2 ='+x2;
  }
  
+ else
+ {
+ document.getElementById('Equation').innerHTML +=  "<p> There is no real root. </p>";
+ }
   } 
-  
-  
   </script>
   <style>
   body {
@@ -46,7 +54,7 @@ padding-left:100px;
   </head>
   <body>
   <h1>Second Degree Equations</h1>
-  <h2>Quadratic Equation: ax^2 + bx +c</h2>
+  <h2>Quadratic Equation: <span id="a">a</span>x<sup>2</sup>+<span id="b">b</span>x+<span id="c">c</span></h2>
   <h3>Enter the coefficients of a,b and c in the field below. </h3>
  
   <div class="form-group"> 
@@ -71,14 +79,11 @@ padding-left:100px;
 <input class="form-control" id="valueC"  type="number"  placeholder=1 style="width:70%; height:30px; margin-top:20px; border-radius:1px;">  
 
   </div>
-<br>  
-
-  <button style="background-color:blue; border:0px; border-radius:10px; padding:20px; color:white;" class="btn btn-primary; " onclick="myEquation()" >Solve Equation</button>
-  
- 
-
-  <p >Result</p>
-   <div id ="Equation"></div>
+<br> 
+  <button type="button" style="background-color:blue; border:0px; border-radius:10px; padding:20px; color:white;" class="btn btn-primary"onclick="myQuadraticEquation();" >Solve Equation</button>
+  <p  >Result</p>
+  <div id ="Equation" style="display:inline;"></div>
+   
   <div id ="x1"></div>
     <div id ="x2"></div>
   </body>
