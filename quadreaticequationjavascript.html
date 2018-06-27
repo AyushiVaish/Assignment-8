@@ -33,12 +33,12 @@ document.getElementById('x2').innerHTML='x2 ='+x2;
   </script>
   <style>
   body {
-  padding-left:56px;
+  padding-left:100px;
   }
 @media (min-width:992px)
 {
 body {
-padding-left:56px;
+padding-left:100px;
 }
 }  
   
@@ -49,10 +49,10 @@ padding-left:56px;
   <h2>Quadratic Equation: ax^2 + bx +c</h2>
   <h3>Enter the coefficients of a,b and c in the field below. </h3>
  
-  <div class="form-group">
+  <div class="form-group"> 
 <label for="valueA">Value of a:</label>
 <br>
-<input class="form-control" id="valueA" type="number" placeholder=1>  
+<input class="form-control" id="valueA" type="number" placeholder=1 style="width:70%; height:30px; margin-top:20px; border-radius:1px;">  
 
   </div>
   <br>
@@ -60,7 +60,7 @@ padding-left:56px;
 	
 <label for="valueB">Value of b:</label>
 <br>
-<input class="form-control" id="valueB"  type="number"  placeholder="1" style="width:100;">  
+<input class="form-control" id="valueB"  type="number"  placeholder=1 style="width:70%; height:30px; margin-top:20px; border-radius:1px;">  
 
   </div>
 <br>
@@ -68,14 +68,14 @@ padding-left:56px;
 	
 <label for="valueC">Value of c:</label>
 <br>
-<input class="form-control" id="valueC"  type="number"  placeholder=1>  
+<input class="form-control" id="valueC"  type="number"  placeholder=1 style="width:70%; height:30px; margin-top:20px; border-radius:1px;">  
 
   </div>
 <br>  
 
-  <button style="background-color:blue; border:0px; border-radius:10px; padding:20px; color:white" class="btn btn-info; " onclick="myEquation()" >Solve Equation</button>
+  <button style="background-color:blue; border:0px; border-radius:10px; padding:20px; color:white;" class="btn btn-primary; " onclick="myEquation()" >Solve Equation</button>
   
-  </div>
+ 
 
   <p >Result</p>
    <div id ="Equation"></div>
