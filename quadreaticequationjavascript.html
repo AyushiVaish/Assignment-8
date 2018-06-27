@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculate Quadratic Equations root.</title>
+  <meta charset="utf-8"/>
+  <script>
+ function myEquation()
+ {
+ var a=document.getElementById('1stNumber').value;
+ var b=document.getElementById('2ndNumber').value;
+ var c=document.getElementById('3rdNumber').value;
+ var d=(b*b)-(4*a*c);
+ var deno=2*a;
+ var sqrd=Math.sqrt(d);
+ if (sqrd==0)
+ {
+ document.getElementById('Equation').innerHTML= "<p> Their is real and equal root. </p>";
+var x1=(-b+sqrd)/deno;
+var x2=(-b-sqrd)/deno;
+document.getElementById('x1').innerHTML='x1 ='+x1;
+document.getElementById('x2').innerHTML='x2 ='+x2;
+
+
+ }
+ else
+ {
+ document.getElementById('Equation').innerHTML=  "<p> Their is no real root. </p>";
+ }
+ 
+  } 
+  
+  
+  </script>
+  <style>
+  body {
+  padding-left:56px;
+  }
+@media (min-width:992px)
+{
+body {
+padding-left:56px;
+}
+}  
+  
+  </style>
+  </head>
+  <body>
+  <h1>Second Degree Equations</h1>
+  <h2>Quadratic Equation:ax^2+bx+c</h2>
+  <h3>Enter the coefficients of a,b and c in the field below. </h3>
+  <div class="form-group">
+<label for="valueA">Value of a:</label>
+<br>
+<input class="form-control" id="valueA" required="" onchange="updateEquation()" type="number" min="0" placeholder=1>  
+<br>
+  </div>
+    <div class="form-group">
+	
+<label for="valueB">Value of b:</label>
+<br>
+<input class="form-control" id="valueB" required="" onchange="updateEquation()" type="number" min="0" placeholder=1>  
+<br>
+  </div>
+    <div class="form-group">
+	
+<label for="valueC">Value of c:</label>
+<br>
+<input class="form-control" id="valueC" required="" onchange="updateEquation()" type="number" min="0" placeholder=1>  
+<br>
+  </div>
+  
+
+  <button class="btn btn-primary " onclick="myEquation()" >Solve Equation</button>
+  <p style="color:blue;">Result</p>
+   <div id ="Equation"></div>
+  <div id ="x1"></div>
+    <div id ="x2"></div>
+  </body>
+  </html>
